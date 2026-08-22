@@ -1,0 +1,7 @@
+{
+  "name": "Student AI Assistant",
+  "description": "Full-stack Student AI Assistant powered by Python Flask, Bootstrap 5, Firebase Firestore, Firebase Authentication, and Google Gemini API.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Student AI Assistant{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-5">
+            <div class="card border-0 shadow rounded-4 overflow-hidden">
+                <div class="card-header bg-primary text-white text-center py-4">
+                    <div class="bg-white text-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-2" style="width: 50px; height: 50px;">
+                        <i class="bi bi-box-arrow-in-right fs-4"></i>
+                    </div>
+                    <h3 class="fw-bold mb-1">Student Login</h3>
+                    <p class="small text-white-50 mb-0">Access your AI tutor and study logs</p>
+                </div>
+                <div class="card-body p-4 p-md-5">
+                    <form method="POST" action="{{ url_for('login') }}" id="loginForm" novalidate>
+                        <!-- Email Field -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold text-dark">
+                                <i class="bi bi-envelope me-1 text-primary"></i> Email Address
+                            </label>
+                            <input type="email" class="form-control form-control-lg rounded-3 fs-6" id="email" name="email" placeholder="student@example.edu" value="{{ email or '' }}" required>
+                            <div class="invalid-feedback">Please enter your email.</div>
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between align-items-center mb-1">
+                                <label for="password" class="form-label fw-semibold text-dark mb-0">
+                                    <i class="bi bi-lock me-1 text-primary"></i> Password
+                                </label>
+                            </div>
+                            <div class="input-group">
+                                <input type="password" class="form-control form-control-lg rounded-start-3 fs-6" id="password" name="password" placeholder="Enter your password" required>
+                                <button class="btn btn-outline-secondary" type="button" id="toggleLoginPass">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary btn-lg w-100 fw-bold rounded-3 shadow-sm" id="loginBtn">
+                            <i class="bi bi-box-arrow-in-right me-2"></i> Log In
+                        </button>
+                    </form>
+
+                    <div class="text-center mt-4 pt-3 border-top">
+                        <span class="text-muted small">Don't have an account yet?</span>
+                        <a href="{{ url_for('register') }}" class="text-primary fw-bold text-decoration-none ms-1">Create one here</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    document.getElementById('toggleLoginPass')?.addEventListener('click', function() {
+        const pass = document.getElementById('password');
+        const icon = this.querySelector('i');
+        if (pass.type === 'password') {
+            pass.type = 'text';
+            icon.classList.replace('bi-eye', 'bi-eye-slash');
+        } else {
+            pass.type = 'password';
+            icon.classList.replace('bi-eye-slash', 'bi-eye');
+        }
+    });
+</script>
+{% endblock %}

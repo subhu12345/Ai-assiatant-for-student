@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Student AI Assistant{% endblock %}
+
+{% block content %}
+<div class="hero-section py-5 py-lg-6 bg-gradient-primary text-white mb-5 shadow-sm">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7 text-center text-lg-start">
+                <span class="badge bg-warning text-dark px-3 py-2 rounded-pill fw-bold mb-3 shadow-sm">
+                    <i class="bi bi-sparkles me-1"></i> AI-Powered Academic Companion
+                </span>
+                <h1 class="display-4 fw-extrabold mb-3 tracking-tight">
+                    Master Any Subject with Your Personal Student AI Assistant
+                </h1>
+                <p class="lead text-white-50 mb-4 pe-lg-4">
+                    Solve tough homework problems, grasp complex concepts step-by-step, draft study summaries, and accelerate your learning with Google Gemini & Firebase.
+                </p>
+                <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                    <a href="{{ url_for('register') }}" class="btn btn-warning btn-lg px-4 fw-bold text-dark shadow">
+                        <i class="bi bi-rocket-takeoff-fill me-2"></i> Register for Free
+                    </a>
+                    <a href="{{ url_for('login') }}" class="btn btn-outline-light btn-lg px-4 fw-semibold">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Student Login
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden text-dark bg-white">
+                    <div class="card-header bg-dark text-white p-3 d-flex align-items-center justify-content-between">
+                        <div class="d-flex align-items-center gap-2">
+                            <span class="status-indicator bg-success"></span>
+                            <span class="fw-semibold small">Gemini Study Assistant</span>
+                        </div>
+                        <span class="badge bg-secondary">Live Demo</span>
+                    </div>
+                    <div class="card-body p-4 bg-light">
+                        <div class="chat-bubble-sample user-sample mb-3 p-3 rounded-3 bg-primary text-white">
+                            <div class="small fw-bold mb-1 opacity-75"><i class="bi bi-person me-1"></i> Student</div>
+                            <div>Can you explain Newton's Second Law with a real-life example?</div>
+                        </div>
+                        <div class="chat-bubble-sample ai-sample p-3 rounded-3 bg-white border shadow-sm">
+                            <div class="small fw-bold text-primary mb-1"><i class="bi bi-robot me-1"></i> Student AI</div>
+                            <p class="small mb-2">Certainly! Newton's 2nd Law is <strong>F = m &times; a</strong> (Force = Mass &times; Acceleration).</p>
+                            <div class="p-2 bg-light rounded small border">
+                                <strong>Real-World Example:</strong> Pushing an empty grocery cart vs. a fully loaded cart. The heavier cart requires more force to accelerate!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white text-center py-3 border-top">
+                        <small class="text-muted"><i class="bi bi-lock-fill text-success me-1"></i> Secure cloud storage with Firebase Firestore</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="container py-4 mb-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-dark">Why Students Love This Platform</h2>
+        <p class="text-muted">Built from the ground up for modern high school, college, and university learners.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-3 feature-card">
+                <div class="card-body text-center">
+                    <div class="feature-icon-wrapper bg-primary bg-opacity-10 text-primary rounded-circle mb-3 mx-auto">
+                        <i class="bi bi-cpu-fill fs-2"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Google Gemini AI</h5>
+                    <p class="text-muted small mb-0">
+                        Harness state-of-the-art AI for clear, pedagogical explanations across STEM, humanities, and programming.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-3 feature-card">
+                <div class="card-body text-center">
+                    <div class="feature-icon-wrapper bg-success bg-opacity-10 text-success rounded-circle mb-3 mx-auto">
+                        <i class="bi bi-shield-lock-fill fs-2"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Firebase Authentication</h5>
+                    <p class="text-muted small mb-0">
+                        Secure student sign-in with encrypted credentials and session management.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm rounded-4 p-3 feature-card">
+                <div class="card-body text-center">
+                    <div class="feature-icon-wrapper bg-warning bg-opacity-10 text-warning rounded-circle mb-3 mx-auto">
+                        <i class="bi bi-clock-history fs-2"></i>
+                    </div>
+                    <h5 class="fw-bold mb-2">Firestore Chat History</h5>
+                    <p class="text-muted small mb-0">
+                        Every question and solution is stored in real-time in Google Firestore for seamless revision.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Subjects Supported Section -->
+<div class="bg-white py-5 border-top border-bottom mb-5">
+    <div class="container text-center">
+        <h3 class="fw-bold mb-4">Supported Academic Fields</h3>
+        <div class="d-flex flex-wrap justify-content-center gap-2">
+            <span class="badge bg-light text-primary border px-3 py-2 fs-6 rounded-pill"><i class="bi bi-calculator me-1"></i> Mathematics</span>
+            <span class="badge bg-light text-success border px-3 py-2 fs-6 rounded-pill"><i class="bi bi-lightning-charge me-1"></i> Physics</span>
+            <span class="badge bg-light text-danger border px-3 py-2 fs-6 rounded-pill"><i class="bi bi-radioactive me-1"></i> Chemistry</span>
+            <span class="badge bg-light text-info border px-3 py-2 fs-6 rounded-pill"><i class="bi bi-code-slash me-1"></i> Computer Science</span>
+            <span class="badge bg-light text-warning border px-3 py-2 fs-6 rounded-pill"><i class="bi bi-book me-1"></i> Literature</span>
+            <span class="badge bg-light text-secondary border px-3 py-2 fs-6 rounded-pill"><i class="bi bi-hourglass-split me-1"></i> History</span>
+        </div>
+    </div>
+</div>
+{% endblock %}
